@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="Medstore">
+        <createTable tableName="LOT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_LOT"/>
+            </column>
+            <column name="EXP_DATE" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="QUANTITY" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="Medstore">
+        <addUniqueConstraint columnNames="EXP_DATE" constraintName="UC_LOT_EXP_DATE" tableName="LOT"/>
+    </changeSet>
+    <changeSet id="3" author="Medstore">
+        <dropUniqueConstraint constraintName="UC_PRODUCT_EXP_DATE" tableName="PRODUCT"/>
+    </changeSet>
+    <changeSet id="4" author="Medstore">
+        <dropColumn columnName="DTYPE" tableName="PRODUCT"/>
+
+        <dropColumn columnName="EXP_DATE" tableName="PRODUCT"/>
+
+        <dropColumn columnName="QUANTITY" tableName="PRODUCT"/>
+    </changeSet>
+</databaseChangeLog>

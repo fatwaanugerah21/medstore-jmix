@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://com.company.medstore/menu.application" insertBefore="administration">
+        <item screen="User.browse" caption="msg://com.company.medstore.screen.user/UserBrowse.caption"/>
+        <!--<item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption" />-->
+        <item screen="Department.browse" caption="msg://com.company.medstore.screen.department/departmentBrowse.menu"/>
+        <item screen="Equipment.browse" caption="msg://com.company.medstore.screen.equipment/equipmentBrowse.menu"/>
+        <item screen="EquipmentGroup.browse"
+              caption="msg://com.company.medstore.screen.equipmentgroup/equipmentGroupBrowse.menu"/>
+        <item screen="SmallStorage.browse"
+              caption="msg://com.company.medstore.screen.smallstorage/smallStorageBrowse.menu"/>
+        <item screen="Product.browse" caption="msg://com.company.medstore.screen.product/productBrowse.menu"/>
+        <item screen="Master.browse" caption="msg://com.company.medstore.screen.master/masterBrowse.caption"/>
+    </menu>
+    <menu id="action" caption="msg://com.company.medstore/menu.action" insertBefore="application">
+        <item screen="Lot.browse" caption="msg://com.company.medstore.screen.lot/lotBrowse.caption"/>
+        <item screen="ImportToBigStorage.browse"
+              caption="msg://com.company.medstore.screen.importtobigstorage/importToBigStorageBrowse.caption"/>
+    </menu>
+
+</menu-config>
